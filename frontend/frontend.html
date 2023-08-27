@@ -3,57 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Sign Up</title>
+    <title>Login</title>
     <style>
-        /* ... existing styles ... */
-
-        .form-toggle {
-            text-align: center;
-            margin-top: 20px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
 
-        .form-toggle a {
-            color: #007bff;
-            text-decoration: none;
+        .login-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .login-button {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form action="your-backend-login-endpoint" method="POST">
+        <form action="http://127.0.0.1:5000" method="POST">
             <input class="login-input" type="text" name="username" placeholder="Username" required>
             <input class="login-input" type="password" name="password" placeholder="Password" required>
             <button class="login-button" type="submit">Login</button>
         </form>
-        <div class="form-toggle">
-            Don't have an account? <a href="#" id="signup-link">Sign up</a>
-        </div>
     </div>
-
-    <div class="login-container" id="signup-container" style="display: none;">
-        <h1>Sign Up</h1>
-        <form action="http://localhost:5000" method="POST">
-            <input class="login-input" type="text" name="username" placeholder="Username" required>
-            <input class="login-input" type="email" name="email" placeholder="Email" required>
-            <input class="login-input" type="password" name="password" placeholder="Password" required>
-            <button class="login-button" type="submit">Sign Up</button>
-        </form>
-        <div class="form-toggle">
-            Already have an account? <a href="#" id="login-link">Login</a>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById("signup-link").addEventListener("click", function() {
-            document.getElementById("signup-container").style.display = "block";
-            document.querySelector(".login-container").style.display = "none";
-        });
-
-        document.getElementById("login-link").addEventListener("click", function() {
-            document.getElementById("signup-container").style.display = "none";
-            document.querySelector(".login-container").style.display = "block";
-        });
-    </script>
 </body>
 </html>
