@@ -6,4 +6,4 @@ Plan: To Build Microservices Project
     For Backend Flask 
 
 Build
-Deploy: Using Docker, Kubernetes, Azure Devops 
+Deploy: Using Docker, Kubernetes, Azure Devops
